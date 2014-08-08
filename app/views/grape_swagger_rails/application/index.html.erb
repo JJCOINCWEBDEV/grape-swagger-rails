@@ -8,7 +8,7 @@
   <script type="text/javascript">
 	$(function () {
 	  var options = $("html").data('swagger-options');
-	  
+
     window.swaggerUi = new SwaggerUi({
       url: options.app_url + options.url,
       dom_id:"swagger-ui-container",
@@ -34,7 +34,7 @@
 
     $('#input_apiKey').change(function() {
       var key = $('#input_apiKey')[0].value;
-      
+
       if(key && key.trim() != "") {
         if (options.api_auth == 'basic') {
           key = "Basic " + Base64.encode(key);
@@ -56,7 +56,7 @@
 
     <form id='api_selector'>
       <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
-      <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
+      <div class='input'><input placeholder="<%= GrapeSwaggerRails.options.api_key_name %>" id="input_apiKey" name="apiKey" type="text"/></div>
       <div class='input'><a id="explore" href="#">Explore</a></div>
     </form>
   </div>
